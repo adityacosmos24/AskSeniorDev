@@ -3,6 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import DfsBfsVisualizer from "./dsa/DfsBfsVisualizer";
+import TextType from "@/components/TextType";
 
 const SystemDesignModel = dynamic(
   () => import("./three/SystemDesignModel"),
@@ -16,8 +17,13 @@ export default function WhyAskSenior() {
     <main className="min-h-screen bg-white">
       {/* ================= HEADING ================= */}
       <section className="text-center mt-12">
-        <h2 className="text-3xl font-semibold">Why Ask Senior ?</h2>
-
+        <TextType className="text-3xl font-semibold"
+          text={["Why Ask Senior?"]}
+          typingSpeed={100}
+          pauseDuration={1500}
+          showCursor={true}
+          cursorCharacter="|"
+        />
         {/* ================= TABS ================= */}
         <div className="mt-8 flex justify-center">
           <div className="flex bg-blue-100/60 backdrop-blur-md rounded-xl p-1 shadow-inner">
