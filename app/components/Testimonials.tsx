@@ -3,10 +3,9 @@
 import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { motion } from 'framer-motion'
-import { Quote } from 'lucide-react'
+import { Quote, MessageCircle } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { cn } from '@/lib/utils'
-import { TextReveal } from '@/components/ui/text-reveal'
 
 const testimonials = [
   {
@@ -64,36 +63,28 @@ export default function TestimonialsSection({ className }: { className?: string 
       {/* ================= CONTENT ================= */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
         {/* ---------- HEADING ---------- */}
-        <div className="flex w-full justify-center">
-          <TextReveal
-            from="bottom"
-            split="letter"
-            className="mb-14 md:mb-20 text-center text-3xl sm:text-4xl md:text-5xl font-semibold text-gray-900"
-          >
+        <div className="mb-20 md:mb-28 pl-4 sm:pl-6">
+          <HeadingWithIcon>
             What our Students Say About us
-          </TextReveal>
+          </HeadingWithIcon>
         </div>
 
         {/* ---------- CAROUSEL ---------- */}
         <div className="relative">
-          {/* Edge fades */}
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 sm:w-16 md:w-24 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 sm:w-16 md:w-24 bg-gradient-to-l from-white to-transparent" />
 
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex items-stretch">
               {[...testimonials, ...testimonials].map((t, i) => (
-                <div
-                  key={i}
-                  className="flex justify-center px-3 sm:px-5 md:px-6"
-                >
+                <div key={i} className="flex justify-center px-3 sm:px-5 md:px-6">
                   <motion.div
                     whileHover={{ y: -6 }}
                     transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                     className="
                       w-[280px] sm:w-[320px] md:w-[360px]
-                      rounded-2xl
-                      border border-white/40
+                      rounded-xl
+                      border border-gray-400
                       bg-white/60
                       backdrop-blur-xl
                       shadow-[0_8px_30px_rgba(0,0,0,0.08)]
@@ -133,5 +124,53 @@ export default function TestimonialsSection({ className }: { className?: string 
         </div>
       </div>
     </section>
+  )
+}
+
+/* ================= HEADING WITH ICON (TEXT REVEAL) ================= */
+
+function HeadingWithIcon({ children }: { children: string }) {
+  const letters = children.split('')
+
+  return (
+    <motion.h2
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.6 }}
+      className="flex items-center text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
+    >
+      {letters.map((char, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            hidden: { opacity: 0, y: 16, filter: 'blur(6px)' },
+            visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
+          }}
+          transition={{
+            delay: i * 0.04,
+            duration: 0.6,
+            ease: [0.18, 0.89, 0.82, 1.04],
+          }}
+          className="inline-block"
+        >
+          {char === ' ' ? '\u00A0' : char}
+        </motion.span>
+      ))}
+
+      <motion.span
+        variants={{
+          hidden: { opacity: 0, scale: 0.5 },
+          visible: { opacity: 1, scale: 1 },
+        }}
+        transition={{
+          delay: letters.length * 0.04 + 0.15,
+          duration: 0.4,
+          ease: 'easeOut',
+        }}
+        className="ml-3 text-blue-600"
+      >
+        <MessageCircle className="w-[1em] h-[1em]" />
+      </motion.span>
+    </motion.h2>
   )
 }

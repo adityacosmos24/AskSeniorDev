@@ -4,6 +4,7 @@ import { useState } from "react";
 import dynamic from "next/dynamic";
 import DfsBfsVisualizer from "./dsa/DfsBfsVisualizer";
 import TextType from "@/components/TextType";
+import PillNav from "@/components/PillNav";
 
 const SystemDesignModel = dynamic(
   () => import("./three/SystemDesignModel"),
@@ -21,22 +22,34 @@ export default function WhyAskSenior() {
           {/* ================= HEADING ================= */}
           <div className="text-center mb-14">
             <TextType
-              className="text-4xl font-semibold"
+              className="text-4xl font-bold"
               text={["Why Ask Senior?"]}
               typingSpeed={100}
               pauseDuration={1500}
-              showCursor={true}
+              showCursor
               cursorCharacter="|"
             />
           </div>
 
-          {/* ================= TABS ================= */}
+          {/* ================= PILL TABS ================= */}
           <div className="mb-16 flex justify-center">
-            <div className="flex bg-blue-100/60 backdrop-blur-md rounded-xl p-1 shadow-inner">
-              <TabButton label="Online Assessment (DSA)" active={activeTab === "dsa"} onClick={() => setActiveTab("dsa")} />
-              <TabButton label="Dev & System Design" active={activeTab === "dev"} onClick={() => setActiveTab("dev")} />
-              <TabButton label="Premium Membership" active={activeTab === "premium"} onClick={() => setActiveTab("premium")} />
-            </div>
+            <PillNav
+              variant="tabs"
+              logo=""
+              items={[
+                { label: "Online Assessment (DSA)", href: "dsa" },
+                { label: "Dev & System Design", href: "dev" },
+                { label: "Premium Membership", href: "premium" }
+              ]}
+              activeHref={activeTab}
+              onTabChange={setActiveTab}
+              baseColor="#E6F6FF"
+              pillColor="#ffffff"
+              pillTextColor="#181A1C"
+              hoveredPillTextColor="#181A1C"
+              initialLoadAnimation={false}
+              className="!w-fit"
+            />
           </div>
 
           {/* ================= CONTENT ================= */}
@@ -51,7 +64,6 @@ export default function WhyAskSenior() {
     </main>
   );
 }
-
 
 /* ================= TAB BUTTON ================= */
 function TabButton({ label, active, onClick }: any) {
