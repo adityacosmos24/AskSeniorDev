@@ -27,7 +27,7 @@ export default function HeroSection() {
         {/* ---------- HEADING ---------- */}
         <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 text-center">
           Your{" "}
-          <Highlighter action="highlight" color="rgba(0, 163, 255, 0.3)">
+          <Highlighter action="highlight" color="#ADE2FF">
             10× growth
           </Highlighter>{" "}
           starts here
@@ -76,9 +76,8 @@ export default function HeroSection() {
                   -left-6 sm:-left-8 md:-left-20
                   top-0 sm:top-4 md:top-24
                   px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4
-                  bg-white
-                  border border-[rgba(0,163,255,0.12)]
-                  shadow-md
+                  bg-[#ECF7FF]
+                  border border-[#D7F0FF] shadow-md
                   z-20
                   max-w-[180px] sm:max-w-[220px] md:max-w-none
                 "
@@ -100,36 +99,81 @@ export default function HeroSection() {
               </motion.div>
           </div>
 
-          {/* ---------- QUOTE CARD ---------- */}
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="
-              mt-10
-              w-full max-w-sm
-              lg:absolute lg:right-[-230px] lg:top-[220px]
-            "
-          >
-            <div className="bg-white shadow-lg p-4">
-              <div className="relative max-w-[360px] px-6 py-5 border border-[#00A3FF] rounded-lg text-sm">
-                
-                <span className="absolute -top-3 -left-3 text-[#00A3FF] text-3xl font-bold bg-white px-1">
-                  “
-                </span>
+{/* ---------- QUOTE CARD ---------- */}
+<motion.div
+  initial={{ y: 20, opacity: 0 }}
+  animate={{ y: 0, opacity: 1 }}
+  transition={{ duration: 0.6, delay: 0.3 }}
+  className="
+    mt-10
+    w-full max-w-sm
+    lg:absolute lg:right-[-280px] lg:top-[220px]
+  "
+>
+<div
+    className="
+      shadow-[0_18px_50px_rgba(0,0,0,0.12)]
+      bg-gradient-to-br
+      from-[#EAF7FF]/70
+      to-white/45
+      backdrop-blur-md
+      p-4
+    "
+>
 
-                <p className="leading-relaxed text-black">
-                  Drawing on my Google experience, I’m building AskSenior for freshers to ask
-                  sharper, industry-grade questions that accelerate learning and growth in
-                  the AI age.
-                </p>
+<div
+      className="
+        relative
+        w-full
+        px-5 py-5
+        rounded-lg
+        text-sm
+        border border-[#92D5FA]
+        bg-gradient-to-br
+        from-[#EAF7FF]/80
+        to-white/50
+        backdrop-blur-md
+      "
+>
 
-                <span className="absolute -bottom-3 -right-3 text-[#00A3FF] text-3xl font-bold bg-white px-1">
-                  ”
-                </span>
-              </div>
-            </div>
-          </motion.div>
+
+
+      {/* Opening Quote */}
+      <span
+        className="
+          absolute
+          -top-3 -left-3
+          text-[#00A3FF]
+          text-3xl
+          font-bold
+          bg-transparent
+        "
+      >
+        “
+      </span>
+
+      <p className="leading-relaxed text-black/90">
+        Drawing on my Google experience, I’m building AskSenior for freshers to ask
+        sharper, industry-grade questions that accelerate learning and growth in
+        the AI age.
+      </p>
+
+      {/* Closing Quote */}
+      <span
+        className="
+          absolute
+          -bottom-3 -right-3
+          text-[#00A3FF]
+          text-3xl
+          font-bold
+          bg-transparent
+        "
+      >
+        ”
+      </span>
+    </div>
+  </div>
+</motion.div>
 
 
         </div>
