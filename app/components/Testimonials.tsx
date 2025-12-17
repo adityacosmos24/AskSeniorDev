@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { Quote, MessageCircle } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { cn } from '@/lib/utils'
+import TextType from '@/components/TextType'
 
 const testimonials = [
   {
