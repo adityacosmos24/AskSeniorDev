@@ -58,7 +58,7 @@ const PillNav: React.FC<PillNavProps> = ({
   const hamburgerRef = useRef<HTMLButtonElement | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const navItemsRef = useRef<HTMLDivElement | null>(null);
-  const logoRef = useRef<HTMLAnchorElement | HTMLElement | null>(null);
+  const logoRef = useRef<HTMLAnchorElement | null>(null);
 
   /* ================= SETUP (ORIGINAL SPEED RESTORED) ================= */
   useEffect(() => {
@@ -209,7 +209,9 @@ onComplete: () => {
                 >
                   <span
                     className="hover-circle"
-                    ref={el => (circleRefs.current[i] = el)}
+                    ref={el => {
+                      circleRefs.current[i] = el;
+                    }}
                   />
                   <span className="label-stack">
                     <span className="pill-label">{item.label}</span>
