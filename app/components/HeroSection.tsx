@@ -8,8 +8,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-white">
-      
+    <section className="relative w-full h-screen overflow-hidden bg-white">      
       {/* ================= BACKGROUND ================= */}
       <Image
         src={HeroSectionBackground}
@@ -99,7 +98,7 @@ export default function HeroSection() {
             className="absolute right-[-230px] top-[220px] z-20"
           >
             {/* OUTER WHITE BOX */}
-            <div className="bg-white rounded-lg shadow-lg p-4">
+            <div className="bg-white shadow-lg p-4">
               {/* INNER BLUE BORDER BOX */}
               <div className="relative max-w-[320px] px-5 py-4 border border-[#00A3FF] rounded-md text-gray-800 text-sm">
                 {/* Opening quote */}
@@ -121,7 +120,7 @@ export default function HeroSection() {
           </motion.div>
 
         </div>
-      </div>
+        </div>
     </section>
   );
 }

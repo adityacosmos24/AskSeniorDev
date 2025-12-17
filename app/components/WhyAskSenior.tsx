@@ -14,55 +14,44 @@ export default function WhyAskSenior() {
   const [activeTab, setActiveTab] = useState("dsa");
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* ================= HEADING ================= */}
-      <section className="text-center mt-12">
-        <TextType className="text-3xl font-semibold"
-          text={["Why Ask Senior?"]}
-          typingSpeed={100}
-          pauseDuration={1500}
-          showCursor={true}
-          cursorCharacter="|"
-        />
-        {/* ================= TABS ================= */}
-        <div className="mt-8 flex justify-center">
-          <div className="flex bg-blue-100/60 backdrop-blur-md rounded-xl p-1 shadow-inner">
-            <TabButton
-              label="Online Assessment (DSA)"
-              active={activeTab === "dsa"}
-              onClick={() => setActiveTab("dsa")}
-            />
-            <TabButton
-              label="Dev & System Design"
-              active={activeTab === "dev"}
-              onClick={() => setActiveTab("dev")}
-            />
-            <TabButton
-              label="Premium Membership"
-              active={activeTab === "premium"}
-              onClick={() => setActiveTab("premium")}
+    <main className="min-h-screen bg-white flex items-center">
+      <section className="w-full px-8">
+        <div className="max-w-6xl mx-auto">
+
+          {/* ================= HEADING ================= */}
+          <div className="text-center mb-14">
+            <TextType
+              className="text-4xl font-semibold"
+              text={["Why Ask Senior?"]}
+              typingSpeed={100}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
             />
           </div>
-        </div>
-      </section>
 
-      {/* ================= CONTENT ================= */}
-      <section className="mt-12 px-8 relative">
-        <div className={activeTab === "dsa" ? "block" : "hidden"}>
-          <DSASection />
-        </div>
+          {/* ================= TABS ================= */}
+          <div className="mb-16 flex justify-center">
+            <div className="flex bg-blue-100/60 backdrop-blur-md rounded-xl p-1 shadow-inner">
+              <TabButton label="Online Assessment (DSA)" active={activeTab === "dsa"} onClick={() => setActiveTab("dsa")} />
+              <TabButton label="Dev & System Design" active={activeTab === "dev"} onClick={() => setActiveTab("dev")} />
+              <TabButton label="Premium Membership" active={activeTab === "premium"} onClick={() => setActiveTab("premium")} />
+            </div>
+          </div>
 
-        <div className={activeTab === "dev" ? "block" : "hidden"}>
-          <DevSection />
-        </div>
+          {/* ================= CONTENT ================= */}
+          <div className="relative">
+            {activeTab === "dsa" && <DSASection />}
+            {activeTab === "dev" && <DevSection />}
+            {activeTab === "premium" && <PremiumSection />}
+          </div>
 
-        <div className={activeTab === "premium" ? "block" : "hidden"}>
-          <PremiumSection />
         </div>
       </section>
     </main>
   );
 }
+
 
 /* ================= TAB BUTTON ================= */
 function TabButton({ label, active, onClick }: any) {
