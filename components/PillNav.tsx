@@ -150,9 +150,10 @@ const PillNav: React.FC<PillNavProps> = ({
         y: 10,
         duration: 0.25,
         ease,
-  onComplete: () => {
-    gsap.set(menu, { visibility: 'hidden' });
-  }      });
+onComplete: () => {
+  gsap.set(menu, { visibility: 'hidden' });
+}
+      });
     }
 
     onMobileMenuClick?.();
