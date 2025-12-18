@@ -25,7 +25,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center pt-24 px-4">
 
         {/* ---------- HEADING ---------- */}
-        <h1 className="text-4xl md:text-5xl font-semibold text-gray-900 text-center">
+        <h1 className="text-4xl md:text-5xl font-semibold text-[#181A1C] text-center">
           Your{" "}
           <Highlighter action="highlight" color="#ADE2FF">
             10× growth
@@ -33,7 +33,7 @@ export default function HeroSection() {
           starts here
         </h1>
 
-        <p className="mt-4 text-black text-center max-w-xl">
+        <p className="mt-4 text-[#4F4F4F] text-center max-w-xl">
           AI guidance, expert mentors, faster outcomes.
           <br />
           Ask a better question
@@ -87,7 +87,7 @@ export default function HeroSection() {
                 </p>
                 <p className="text-xs sm:text-sm md:text-base text-black/90 leading-tight">
                   SWE at{" "}
-                  <span className="font-medium">
+                  <span className="font-semibold text-sm sm:text-base md:text-lg">
                     <span className="text-[#4285F4]">G</span>
                     <span className="text-[#EA4335]">o</span>
                     <span className="text-[#FBBC05]">o</span>

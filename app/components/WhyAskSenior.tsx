@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import DfsBfsVisualizer from "./dsa/DfsBfsVisualizer";
 import TextType from "@/components/TextType";
 import PillNav from "@/components/PillNav";
+import DsaSideCard from "@/components/DsaSideCard";
 
 const SystemDesignModel = dynamic(
   () => import("./three/SystemDesignModel"),
@@ -20,7 +21,7 @@ export default function WhyAskSenior() {
         <div className="max-w-6xl mx-auto">
 
           {/* ================= HEADING ================= */}
-          <div className="text-center mb-14">
+          <div className="text-center mt-6">
             <TextType
               className="text-4xl font-bold"
               text={["Why Ask Senior?"]}
@@ -32,7 +33,7 @@ export default function WhyAskSenior() {
           </div>
 
           {/* ================= PILL TABS ================= */}
-          <div className="mb-16 flex justify-center">
+          <div className="flex justify-center mt-8 mb-8 -translate-x-3">
             <PillNav
               variant="tabs"
               logo=""
@@ -87,44 +88,65 @@ function TabButton({ label, active, onClick }: any) {
 /* ================= DSA SECTION ================= */
 function DSASection() {
   return (
-    <div className="relative max-w-6xl mx-auto">
-      {/* BIG BOX */}
-      <div className="relative overflow-visible bg-gradient-to-br from-blue-100 via-blue-50 to-white rounded-2xl p-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="relative max-w-6xl mx-auto overflow-visible">
+      
+      {/* POSITIONING WRAPPER (allows overlap) */}
+      <div className="relative w-[929px] h-[558px] overflow-visible">
         
-        {/* LEFT CONTENT */}
-        <div className="md:col-span-2 h-[320px] flex items-center justify-center">
-          <DfsBfsVisualizer />
-        </div>
+        {/* BACKGROUND LAYER (clipped) */}
+        <div
+          className="
+            absolute inset-0
+            rounded-[3px]
+            overflow-hidden
+            border border-[#DEF4FF]
+          "
+          style={{
+            background: `
+              radial-gradient(
+                600px 400px at 80% 50%,
+                rgba(0,163,255,0.12),
+                transparent 70%
+              ),
+              radial-gradient(
+                800px 500px at 30% 20%,
+                rgba(0,163,255,0.06),
+                transparent 75%
+              ),
+              linear-gradient(
+                90deg,
+                #ffffff 0%,
+                #E1F4FF 100%
+              )
+            `
+          }}
 
-        {/* FLOATING CARD */}
+        />
+
+        {/* CONTENT INSIDE BACKGROUND */}
+<div className="
+  relative z-10 h-full
+  flex items-center justify-center
+  pr-[220px]
+">
+  <DfsBfsVisualizer />
+</div>
+
+
+
+        {/* FLOATING CARD — HALF IN / HALF OUT */}
         <div
           className="
             absolute
             top-1/2
-            right-[-3.5rem]
+            right-[-270px]
             -translate-y-1/2
-            bg-white
-            rounded-xl
-            shadow-xl
-            p-6
-            w-[280px]
+            z-20
           "
         >
-          <h3 className="font-semibold mb-4 text-gray-900">
-            What you get
-          </h3>
-
-          <ul className="space-y-3 text-sm text-gray-600">
-            <li>AI-powered DSA Roadmaps</li>
-            <li>Concepts + Runnable Code</li>
-            <li>Problems by Concept</li>
-            <li>Final OA Challenge</li>
-          </ul>
-
-          <button className="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition">
-            Explore DSA Roadmaps
-          </button>
+          <DsaSideCard />
         </div>
+
       </div>
     </div>
   );
@@ -134,15 +156,12 @@ function DSASection() {
 function DevSection() {
   return (
     <div className="relative max-w-6xl mx-auto">
-      {/* BIG BOX */}
       <div className="relative overflow-visible bg-gradient-to-br from-blue-100 via-blue-50 to-white rounded-2xl p-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        {/* LEFT CONTENT */}
         <div className="md:col-span-2 h-[320px] w-full overflow-hidden rounded-xl">
           <SystemDesignModel />
         </div>
 
-        {/* FLOATING CARD */}
         <div
           className="
             absolute
@@ -175,7 +194,6 @@ function DevSection() {
     </div>
   );
 }
-
 
 /* ================= PREMIUM SECTION ================= */
 function PremiumSection() {
