@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { askASeniorData } from "@/components/Askaseniordata";
+import DfsBfsVisualizer from "../components/dsa/DfsBfsVisualizer"
 
 export default function AskSenior() {
   const [activeTab, setActiveTab] = useState(askASeniorData[0]);
@@ -19,7 +20,7 @@ export default function AskSenior() {
         {askASeniorData.map((tab) => {
           const isActive = tab.id === activeTab.id;
           return (
-            <button
+            <button 
               key={tab.id}
               onClick={() => setActiveTab(tab)}
               className={`px-5 md:px-8 py-2.5 rounded-sm text-sm font-medium transition-all duration-200
@@ -60,17 +61,24 @@ export default function AskSenior() {
       "
           >
             {/* Left Section */}
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="relative w-full h-[240px] md:h-[380px]">
-                <Image
-                  src={activeTab.leftContent.image}
-                  alt="Left content illustration"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
-            </div>
+<div className="flex-1 flex flex-col justify-center">
+  <div className="relative w-full h-[240px] md:h-[380px]">
+    {activeTab.leftContent.type === "visualizer" ? (
+      <div className="w-full h-full flex items-center justify-center">
+        <DfsBfsVisualizer />
+      </div>
+    ) : (
+      <Image
+        src={activeTab.leftContent.image!}
+        alt=""
+        fill
+        className="object-contain"
+        priority
+      />
+    )}
+  </div>
+</div>
+
           </div>
 
           {/* Right Card */}

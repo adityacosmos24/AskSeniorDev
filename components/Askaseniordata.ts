@@ -3,6 +3,7 @@ export type AskASeniorTab = {
     title: string;
     leftContent: {
         description?: string;
+        type: "image"|"visualizer";
         image: string;
     };
     rightContent: {
@@ -24,8 +25,8 @@ export const askASeniorData: AskASeniorTab[] = [
         id: "dsa",
         title: "Online Assessment (DSA)",
         leftContent: {
-
-            image: "/dfsbfsgraph.png",
+            type: "visualizer",
+            image: "/default-image.png"
         },
         rightContent: {
            
@@ -54,14 +55,14 @@ export const askASeniorData: AskASeniorTab[] = [
             button:{
                 ctaText: "Explore DSA Roadmaps",
                 image:"/whitestar.png"
-        }
+            }
         },
     },
     {
         id: "system",
         title: "Dev & System Design",
         leftContent: {
-
+            type:"image",
             image: "/apiimg.png",
         },
         rightContent: {
@@ -99,6 +100,7 @@ export const askASeniorData: AskASeniorTab[] = [
         id: "premium",
         title: "Premium Membership",
         leftContent: {
+            type:"image",
             image: "/images/coming-soon.png",
         },
         rightContent: {
