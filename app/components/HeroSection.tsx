@@ -22,7 +22,7 @@ export default function HeroSection() {
       </div>
 
       {/* ================= HERO CONTENT ================= */}
-      <div className="relative z-10 flex flex-col items-center pt-24 px-4">
+      <div className="relative z-10 flex flex-col items-center pt-6 md:pt-8 -mt-2 md:-mt-4 px-4">
 
         {/* ---------- HEADING ---------- */}
         <h1 className="text-4xl md:text-5xl font-semibold text-[#181A1C] text-center">
