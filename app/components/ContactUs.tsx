@@ -50,18 +50,18 @@ export default function ContactUs() {
             lg:gap-[50px]
           "
         >
-<h3
-  className="
-    text-[24px] sm:text-[26px] lg:text-[32px]
-    font-semibold
-    tracking-tight
-    leading-[1.15]
-    text-[#0F172A]
-    whitespace-nowrap sm:whitespace-normal
-  "
->
-  What are you<span className="hidden sm:inline"><br /></span> waiting for?
-</h3>
+        <h3
+        className="
+            text-[24px] sm:text-[26px] lg:text-[32px]
+            font-semibold
+            tracking-tight
+            leading-[1.15]
+            text-[#0F172A]
+            whitespace-nowrap sm:whitespace-normal
+        "
+        >
+        What are you<span className="hidden sm:inline"><br /></span> waiting for?
+        </h3>
 
 
 
