@@ -1,28 +1,39 @@
 'use client'
-import { Rocket } from 'lucide-react';
+import Lottie from "lottie-react"
+import RocketAnimation from "../../public/RockerAnimation.json"
+import { BorderBeam } from "../../components/ui/border-beam"
+import { RippleButton } from "@/components/ui/ripple-button"
 
 export default function ContactUs() {
   return (
-    <section className="w-full flex flex-col items-center">
+    <section className="w-full flex flex-col items-center pt-8 sm:pt-12">
       {/* ================= HEADER ================= */}
       <div className="w-full flex flex-col items-center mb-10 px-4">
         <h2 className="text-[28px] sm:text-[32px] font-semibold flex items-center gap-2">
-          Contact us <span className="text-[#00A3FF]"><Rocket/></span>
+          Contact us
+          <span className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]">
+            <Lottie
+              animationData={RocketAnimation}
+              loop
+              autoplay
+              className="w-full h-full scale-[1.5] origin-center"
+            />
+          </span>
         </h2>
-        <p className="mt-2 text-[14px] text-gray-500 text-center max-w-[500px]">
-          Lorem ipsum dolor sit amet consectetur. Mi cursus pretium turpis
-          neque quis id. Vehicula cursus vitae volutpat turpis leo.
-        </p>
       </div>
 
       {/* ================= MAIN CONTAINER ================= */}
       <div
         className="
           w-full max-w-[1200px]
-          bg-[#EAF7FF]
+          bg-gradient-to-b
+          from-[#CFEFFF] from-0%
+          via-[#F2FAFF] via-70%
+          to-white to-100%
           rounded-[20px]
           px-4 py-6
           flex flex-col gap-8
+          border border-[#94D8FF]
 
           lg:h-[589px]
           lg:px-[49px] lg:py-[64px]
@@ -34,15 +45,25 @@ export default function ContactUs() {
           className="
             w-full
             flex flex-col gap-8
-
             lg:w-[334px]
             lg:justify-center
             lg:gap-[50px]
           "
         >
-          <h3 className="text-[22px] lg:text-[24px] font-semibold leading-tight">
-            What are you<br />waiting for?
-          </h3>
+<h3
+  className="
+    text-[24px] sm:text-[26px] lg:text-[32px]
+    font-semibold
+    tracking-tight
+    leading-[1.15]
+    text-[#0F172A]
+    whitespace-nowrap sm:whitespace-normal
+  "
+>
+  What are you<span className="hidden sm:inline"><br /></span> waiting for?
+</h3>
+
+
 
           <div className="flex flex-col gap-4 lg:gap-[29px]">
             {[
@@ -53,20 +74,58 @@ export default function ContactUs() {
               <div
                 key={text}
                 className="
+                  relative overflow-hidden group
                   w-full h-[74px]
-                  border border-[#00A3FF]
                   rounded-[6px]
                   flex items-center justify-between
+                  border border-[#01A4FF]
+                  border-r-0
                   px-4 lg:px-[24px]
                   text-[14px]
-
                   lg:w-[334px]
+                  bg-white
                 "
               >
                 <span>{text}</span>
-                <div className="w-[40px] h-[40px] bg-[#00A3FF] rounded flex items-center justify-center text-white">
-                  →
+
+                {/* ===== Arrow Button (enhanced only) ===== */}
+                <div
+                  className="
+                    w-[40px] h-[40px]
+                    bg-[#00A3FF]
+                    rounded
+                    flex items-center justify-center
+                    text-white
+                    transition-all duration-300 ease-out
+                    group-hover:scale-110
+                    group-focus-within:scale-110
+                  "
+                >
+                  <span
+                    className="
+                      inline-block
+                      transition-transform duration-300 ease-out
+                      group-hover:translate-x-1
+                      group-focus-within:translate-x-1
+                    "
+                  >
+                    →
+                  </span>
                 </div>
+
+                {/* ===== Border Beams ===== */}
+                <BorderBeam
+                  duration={6}
+                  size={100}
+                  className="from-transparent via-[#01A4FF] to-transparent"
+                />
+                <BorderBeam
+                  duration={6}
+                  delay={3}
+                  size={100}
+                  borderWidth={2}
+                  className="from-transparent via-[#01A4FF] to-transparent"
+                />
               </div>
             ))}
           </div>
@@ -80,6 +139,7 @@ export default function ContactUs() {
             rounded-[10px]
             p-4
             flex flex-col gap-4
+            shadow-lg
 
             lg:w-[700px]
             lg:h-[497px]
@@ -87,24 +147,20 @@ export default function ContactUs() {
             lg:gap-0
           "
         >
-          {/* ROW 1 */}
           <div className="flex flex-col gap-4 lg:flex-row lg:gap-[34px] lg:mb-[24px]">
             <Input placeholder="First Name" />
             <Input placeholder="Last Name" />
           </div>
 
-          {/* ROW 2 */}
           <div className="flex flex-col gap-4 lg:flex-row lg:gap-[34px] lg:mb-[24px]">
             <Input placeholder="Email" />
             <Input placeholder="Phone No" />
           </div>
 
-          {/* SUBJECT */}
           <div className="lg:mb-[24px]">
             <Input full placeholder="Subject" />
           </div>
 
-          {/* DESCRIPTION */}
           <textarea
             className="
               w-full h-[92px]
@@ -117,11 +173,10 @@ export default function ContactUs() {
             placeholder="Description"
           />
 
-          {/* BUTTON */}
           <div className="flex justify-center mt-6 lg:mt-[34px]">
-            <button className="w-[140px] h-[40px] bg-[#00A3FF] text-white rounded">
+            <RippleButton className="w-[140px] h-[40px] bg-[#00A3FF] text-white rounded">
               Submit Form
-            </button>
+            </RippleButton>
           </div>
         </div>
       </div>
@@ -147,7 +202,6 @@ function Input({
         px-[16px]
         text-[14px]
         outline-none
-
         lg:${full ? 'w-full' : 'w-[303px]'}
       `}
     />

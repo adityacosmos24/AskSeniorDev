@@ -26,7 +26,7 @@ export const askASeniorData: AskASeniorTab[] = [
         title: "Online Assessment (DSA)",
         leftContent: {
             type: "visualizer",
-            image: "/default-image.png"
+            image: "/dfsbfsgraph.png"
         },
         rightContent: {
            
