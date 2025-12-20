@@ -4,6 +4,7 @@ import AskSenior from "./components/AskSenior";
 import AskSeniorMobile from "./components/AskSeniorMobile";
 import ContactUs from "./components/ContactUs";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <AskSenior />
       <Testimonials />
       <ContactUs />
+      <Footer />
     </>
   );
 }
