@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { askASeniorData } from "@/components/Askaseniordata";
 import DfsBfsVisualizer from "../components/dsa/DfsBfsVisualizer"
+import TextType from "@/components/TextType";
 
 export default function AskSenior() {
   const [activeTab, setActiveTab] = useState(askASeniorData[0]);
@@ -11,9 +12,10 @@ export default function AskSenior() {
   return (
     <section className="hidden md:flex w-full flex-col items-center py-16 md:py-24 bg-white">
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-semibold text-center mb-10">
-        Why Ask Senior?
-      </h2>
+      <TextType 
+        text="Why Ask Senior?" 
+        className="text-3xl md:text-4xl font-semibold text-center mb-10" 
+      />
 
       {/* Tabs */}
       <div className="flex flex-wrap justify-center gap-2 bg-[#E6F6FF] rounded-sm p-1.5 mb-10 shadow-sm">
