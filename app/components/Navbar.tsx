@@ -55,7 +55,7 @@ export default function Navbar() {
             </Link>
             <Link
               href="/profile"
-              className="inline-block bg-white border border-[#00A3FF] hover:bg-[#00A3FF] hover:text-white text-black px-6 py-2 rounded font-semibold text-sm shadow-sm transition-colors"
+              className="inline-block bg-white border border-[#00A3FF] hover:bg-[#00A3FF] hover:text-white text-slate-700 px-6 py-2 rounded font-semibold text-sm shadow-sm transition-colors"
             >
               Sign up
             </Link>

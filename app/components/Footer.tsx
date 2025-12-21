@@ -13,7 +13,7 @@ import { Link2 } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="w-full bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 py-6">
         
         {/* ================= DESKTOP (UNCHANGED) ================= */}
         <div className="hidden md:flex items-center justify-between">
@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column */}
-          <div className="flex flex-col gap-6 pt-[64px]">
+<div className="flex flex-col gap-6 mt-[101px]">
             <MobileItem
               icon={<Instagram />}
               label="INSTAGRAM"
@@ -76,6 +76,27 @@ export default function Footer() {
 
         </div>
       </div>
+      {/* ================= FOOTER BOTTOM BAR ================= */}
+<div className="w-full bg-[#E6F6FF] border-t border-[#0C8CE9]">
+  <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-center justify-between gap-2 text-[13px] text-[#0F172A]">
+    
+    {/* Left */}
+    <span className="flex items-center gap-1 text-[#00A3FF] font-medium">
+  <span className="font-medium">©</span> Senior 2025. All rights reserved.
+</span>
+
+
+    {/* Right */}
+    <Link
+      href="/privacy-policy"
+      className="text-[#00A3FF] hover:underline font-medium"
+    >
+      Privacy Policy
+    </Link>
+
+  </div>
+</div>
+
     </footer>
   );
 }
