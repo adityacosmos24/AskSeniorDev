@@ -6,7 +6,7 @@ import DfsBfsVisualizer from "../components/dsa/DfsBfsVisualizer";
 
 export default function AskSeniorMobile() {
   return (
-    <section className="block md:hidden px-4 py-10 bg-white space-y-12">
+    <section className="block md:hidden px-4 py-16 bg-white space-y-12">
       {askASeniorData.map((section, idx) => {
         const isPremium = section.title === "Premium Membership";
 

@@ -6,9 +6,9 @@ import { RippleButton } from "@/components/ui/ripple-button"
 
 export default function ContactUs() {
   return (
-    <section className="w-full flex flex-col items-center pt-4 sm:pt-6">
+    <section className="w-full flex flex-col items-center py-16 md:py-24">
       {/* ================= HEADER ================= */}
-      <div className="w-full flex flex-col items-center mb-10 px-4">
+      <div className="w-full flex flex-col items-center mb-12 md:mb-16 px-4">
 <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-semibold flex items-center gap-3">
           Contact us
           <span className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]">
@@ -25,7 +25,8 @@ export default function ContactUs() {
       {/* ================= MAIN CONTAINER ================= */}
       <div
         className="
-          w-full max-w-[1200px]
+          w-full max-w-[1400px]
+          mx-auto
           bg-gradient-to-b
           from-[#CFEFFF] from-0%
           via-[#F2FAFF] via-70%

@@ -47,14 +47,14 @@ export default function TestimonialsSection({ className }: { className?: string 
   return (
     <section
       className={cn(
-        'relative bg-white overflow-hidden py-20 md:min-h-screen flex items-center',
+        'relative bg-white overflow-hidden py-16 md:py-24 flex items-center',
         className
       )}
     >
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
 
         {/* ---------- HEADING ---------- */}
-        <div className="mb-20 md:mb-28 pl-4 sm:pl-6">
+        <div className="mb-12 md:mb-16 pl-4 sm:pl-6">
           <HeadingWithIcon>
             What our Students Say About us
           </HeadingWithIcon>

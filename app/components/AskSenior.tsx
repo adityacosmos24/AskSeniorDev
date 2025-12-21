@@ -14,11 +14,11 @@ export default function AskSenior() {
       {/* Title */}
       <TextType 
         text="Why Ask Senior?" 
-        className="text-3xl md:text-4xl font-semibold text-center mb-10" 
+        className="text-3xl md:text-4xl font-semibold text-center mb-12 md:mb-16" 
       />
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-2 bg-[#E6F6FF] rounded-sm p-1.5 mb-10 shadow-sm">
+      <div className="flex flex-wrap justify-center gap-2 bg-[#E6F6FF] rounded-sm p-1.5 mb-12 shadow-sm">
         {askASeniorData.map((tab) => {
           const isActive = tab.id === activeTab.id;
           return (
