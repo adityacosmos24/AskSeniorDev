@@ -120,7 +120,7 @@ export default function AskSeniorMobile() {
                         text-gray-900
                         border
                         border-white/40
-                        placeholder:text-blue-500
+                        placeholder:text-[#00A3FF]
                         placeholder:font-medium
                         outline-none
                         focus:border-white/70
@@ -129,7 +129,7 @@ export default function AskSeniorMobile() {
                       "
                     />
 
-                    <button className="mt-3 w-full px-6 py-3 bg-blue-600 text-white rounded-sm font-medium hover:bg-blue-700 transition">
+                    <button className="mt-3 w-full px-6 py-3 bg-[#00A3FF] text-white rounded-sm font-medium hover:bg-blue-700 transition">
                       Submit
                     </button>
                   </div>
