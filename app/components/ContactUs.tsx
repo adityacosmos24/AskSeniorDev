@@ -88,8 +88,9 @@ export default function ContactUs() {
                   bg-white
                 "
               >
-                <span className="font-semibold">{text}</span>
-
+<span className="text-[15px] leading-snug font-semibold text-[#0F172A]">
+  {text}
+</span>
                 {/* ===== Arrow Button (enhanced only) ===== */}
                 <div
                   className="
