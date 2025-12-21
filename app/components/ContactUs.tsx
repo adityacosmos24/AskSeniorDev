@@ -6,17 +6,17 @@ import { RippleButton } from "@/components/ui/ripple-button"
 
 export default function ContactUs() {
   return (
-    <section className="w-full flex flex-col items-center pt-8 sm:pt-12">
+    <section className="w-full flex flex-col items-center pt-4 sm:pt-6">
       {/* ================= HEADER ================= */}
       <div className="w-full flex flex-col items-center mb-10 px-4">
-        <h2 className="text-[28px] sm:text-[32px] font-semibold flex items-center gap-2">
+<h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-semibold flex items-center gap-3">
           Contact us
           <span className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]">
             <Lottie
               animationData={RocketAnimation}
               loop
               autoplay
-              className="w-full h-full scale-[1.5] origin-center"
+              className="w-full h-full scale-[1.7] origin-center"
             />
           </span>
         </h2>
@@ -50,18 +50,20 @@ export default function ContactUs() {
             lg:gap-[50px]
           "
         >
-        <h3
-        className="
-            text-[24px] sm:text-[26px] lg:text-[32px]
-            font-semibold
-            tracking-tight
-            leading-[1.15]
-            text-[#0F172A]
-            whitespace-nowrap sm:whitespace-normal
-        "
-        >
-        What are you<span className="hidden sm:inline"><br /></span> waiting for?
-        </h3>
+<h3
+  className="
+    text-[26px] sm:text-[30px] lg:text-[34px]
+    font-semibold
+    tracking-tight
+    leading-[1.2]
+    text-[#0F172A]
+    whitespace-nowrap sm:whitespace-normal
+  "
+>
+  What are you<span className="hidden sm:inline"><br /></span> waiting for?
+</h3>
+
+
 
 
 
@@ -86,7 +88,7 @@ export default function ContactUs() {
                   bg-white
                 "
               >
-                <span>{text}</span>
+                <span className="font-semibold">{text}</span>
 
                 {/* ===== Arrow Button (enhanced only) ===== */}
                 <div
