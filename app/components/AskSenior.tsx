@@ -162,7 +162,7 @@ export default function AskSenior() {
     border
     border-white/40
 
-    placeholder:text-blue-500
+    placeholder:text-[#00A3FF]
     placeholder:font-medium
 
     outline-none
@@ -174,7 +174,7 @@ export default function AskSenior() {
 
 
               {/* Button */}
-              <button className="mt-3 px-10 py-3 bg-blue-600 text-white rounded-sm font-medium hover:bg-blue-700 transition">
+              <button className="mt-3 px-10 py-3 bg-[#00A3FF] text-white rounded-sm font-medium hover:bg-blue-700 transition">
                 Submit
               </button>
             </div>
