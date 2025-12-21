@@ -5,6 +5,7 @@ import Jaskaran from "../../public/Jaskaran.png";
 import HeroSectionBackground from "../../public/HeroSectionBackground.png";
 import { Highlighter } from "@/components/ui/highlighter";
 import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -45,16 +46,9 @@ export default function HeroSection() {
           {/* ---------- IMAGE CONTAINER ---------- */}
           <div className="relative">
 
-            {/* Profile Image */}
             <div className="relative w-[260px] h-[260px] md:w-[420px] md:h-[420px] flex items-center justify-center mx-auto">
-              
-              {/* Glow (desktop only) */}
               <div className="hidden md:block absolute w-[580px] h-[580px] rounded-full bg-blue-200/40 blur-3xl -z-10" />
-
-              {/* Ring */}
               <div className="absolute inset-0 rounded-full border border-blue-300/60 bg-white/70 backdrop-blur-sm shadow-2xl" />
-
-              {/* Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden">
                 <Image
                   src={Jaskaran}
@@ -66,115 +60,104 @@ export default function HeroSection() {
               </div>
             </div>
 
-              {/* ---------- GOOGLE SDE CARD (RESPONSIVE & FACE-SAFE) ---------- */}
-              <motion.div
-                initial={{ x: -40, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                className="
-                  absolute
-                  -left-6 sm:-left-8 md:-left-20
-                  top-0 sm:top-4 md:top-24
-                  px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4
-                  bg-[#ECF7FF]
-                  border border-[#D7F0FF] shadow-md
-                  z-20
-                  max-w-[180px] sm:max-w-[220px] md:max-w-none
-                "
-              >
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-black leading-tight">
-                  Jaskaran Singh
-                </p>
-                <p className="text-xs sm:text-sm md:text-base text-black/90 leading-tight">
-                  SWE at{" "}
-                  <span className="font-semibold text-sm sm:text-base md:text-lg">
-                    <span className="text-[#4285F4]">G</span>
-                    <span className="text-[#EA4335]">o</span>
-                    <span className="text-[#FBBC05]">o</span>
-                    <span className="text-[#4285F4]">g</span>
-                    <span className="text-[#34A853]">l</span>
-                    <span className="text-[#EA4335]">e</span>
-                  </span>
-                </p>
-              </motion.div>
+            {/* ---------- GOOGLE SDE CARD ---------- */}
+            <motion.div
+              initial={{ x: -40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              className="
+                absolute
+                -left-6 sm:-left-8 md:-left-20
+                top-0 sm:top-4 md:top-24
+                px-3 py-2 sm:px-4 sm:py-3 md:px-5 md:py-4
+                bg-[#ECF7FF]
+                border border-[#D7F0FF]
+                shadow-md
+                z-20
+              "
+            >
+              <p className="text-sm sm:text-base md:text-lg font-semibold text-black leading-tight">
+                Jaskaran Singh
+              </p>
+              <p className="text-xs sm:text-sm md:text-base text-black/90 leading-tight">
+                SWE at{" "}
+                <span className="font-semibold">
+                  <span className="text-[#4285F4]">G</span>
+                  <span className="text-[#EA4335]">o</span>
+                  <span className="text-[#FBBC05]">o</span>
+                  <span className="text-[#4285F4]">g</span>
+                  <span className="text-[#34A853]">l</span>
+                  <span className="text-[#EA4335]">e</span>
+                </span>
+              </p>
+            </motion.div>
           </div>
 
-{/* ---------- QUOTE CARD ---------- */}
-<motion.div
-  initial={{ y: 20, opacity: 0 }}
-  animate={{ y: 0, opacity: 1 }}
-  transition={{ duration: 0.6, delay: 0.3 }}
-  className="
-    mt-10
-    w-full max-w-sm
-    lg:absolute lg:right-[-280px] lg:top-[220px]
-  "
->
-<div
-    className="
-      shadow-[0_18px_50px_rgba(0,0,0,0.12)]
-      bg-gradient-to-br
-      from-[#EAF7FF]/70
-      to-white/45
-      backdrop-blur-md
-      p-4
-    "
->
+          {/* ---------- QUOTE CARD ---------- */}
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="
+              mt-10
+              w-full max-w-sm
+              lg:absolute lg:right-[-280px] lg:top-[220px]
+            "
+          >
+            <div className="
+              shadow-[0_18px_50px_rgba(0,0,0,0.12)]
+              bg-gradient-to-br
+              from-[#EAF7FF]/70
+              to-white/45
+              backdrop-blur-md
+              p-4
+            ">
+              <div className="
+                relative
+                w-full
+                px-5 py-5
+                rounded-lg
+                text-sm
+                border border-[#92D5FA]
+                bg-gradient-to-br
+                from-[#EAF7FF]/80
+                to-white/50
+                backdrop-blur-md
+              ">
 
-<div
-      className="
-        relative
-        w-full
-        px-5 py-5
-        rounded-lg
-        text-sm
-        border border-[#92D5FA]
-        bg-gradient-to-br
-        from-[#EAF7FF]/80
-        to-white/50
-        backdrop-blur-md
-      "
->
+                {/* Opening Quote (Lucide) */}
+                <Quote
+                  className="
+                    absolute
+                    -top-4 -left-4
+                    w-6 h-6
+                    rotate-180
+                    text-[#00A3FF]
+                    bg-[#EAF7FF]
+                    backdrop-blur-md
+                  "
+                />
 
+                <p className="leading-relaxed text-black/90">
+                  Drawing on my Google experience, I’m building AskSenior for freshers to ask
+                  sharper, industry-grade questions that accelerate learning and growth in
+                  the AI age.
+                </p>
 
+                {/* Closing Quote (Lucide rotated) */}
+                <Quote
+                  className="
+                    absolute
+                    -bottom-4 -right-4
+                    w-6 h-6
+                    text-[#00A3FF]
+                    bg-white
+                  "
+                />
 
-      {/* Opening Quote */}
-      <span
-        className="
-          absolute
-          -top-3 -left-3
-          text-[#00A3FF]
-          text-3xl
-          font-bold
-          bg-transparent
-        "
-      >
-        “
-      </span>
-
-      <p className="leading-relaxed text-black/90">
-        Drawing on my Google experience, I’m building AskSenior for freshers to ask
-        sharper, industry-grade questions that accelerate learning and growth in
-        the AI age.
-      </p>
-
-      {/* Closing Quote */}
-      <span
-        className="
-          absolute
-          -bottom-3 -right-3
-          text-[#00A3FF]
-          text-3xl
-          font-bold
-          bg-transparent
-        "
-      >
-        ”
-      </span>
-    </div>
-  </div>
-</motion.div>
-
+              </div>
+            </div>
+          </motion.div>
 
         </div>
       </div>

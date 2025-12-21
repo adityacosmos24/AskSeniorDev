@@ -51,17 +51,8 @@ export default function TestimonialsSection({ className }: { className?: string 
         className
       )}
     >
-      {/* ================= BACKGROUND GLOWS ================= */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-        <div className="relative w-[700px] sm:w-[900px] md:w-[1000px] h-[300px] sm:h-[380px] md:h-[420px]">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[360px] md:w-[420px] h-[160px] rounded-full bg-blue-400/20 blur-[110px]" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[360px] sm:w-[440px] md:w-[520px] h-[200px] rounded-full bg-blue-500/25 blur-[130px]" />
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[360px] md:w-[420px] h-[160px] rounded-full bg-sky-400/20 blur-[110px]" />
-        </div>
-      </div>
-
-      {/* ================= CONTENT ================= */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6">
+
         {/* ---------- HEADING ---------- */}
         <div className="mb-20 md:mb-28 pl-4 sm:pl-6">
           <HeadingWithIcon>
@@ -74,14 +65,54 @@ export default function TestimonialsSection({ className }: { className?: string 
           <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-12 sm:w-16 md:w-24 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-12 sm:w-16 md:w-24 bg-gradient-to-l from-white to-transparent" />
 
-          <div ref={emblaRef} className="overflow-hidden">
-            <div className="flex items-stretch">
+          {/* ✅ FIX 1: allow vertical overflow */}
+          <div
+            ref={emblaRef}
+            className="overflow-x-hidden overflow-y-visible"
+          >
+            {/* ✅ FIX 2: add hover headroom */}
+            <div className="flex items-stretch py-4">
+
               {[...testimonials, ...testimonials].map((t, i) => (
-                <div key={i} className="flex justify-center px-3 sm:px-5 md:px-6">
+                <div
+                  key={i}
+                  className="relative flex justify-center px-3 sm:px-5 md:px-6 overflow-visible"
+                >
+                  {/* LEFT GLOW */}
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      left-1/2 -translate-x-full
+                      top-1/2 -translate-y-1/2
+                      h-[70%]
+                      w-[120px]
+                      bg-blue-400/25
+                      blur-[90px]
+                    "
+                  />
+
+                  {/* RIGHT GLOW */}
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      left-1/2
+                      top-1/2 -translate-y-1/2
+                      h-[70%]
+                      w-[120px]
+                      bg-sky-400/25
+                      blur-[90px]
+                    "
+                  />
+
+                  {/* CARD */}
                   <motion.div
                     whileHover={{ y: -6 }}
                     transition={{ type: 'spring', stiffness: 260, damping: 20 }}
                     className="
+                      relative
+                      z-10
                       w-[280px] sm:w-[320px] md:w-[360px]
                       rounded-xl
                       border border-gray-400
@@ -119,6 +150,7 @@ export default function TestimonialsSection({ className }: { className?: string 
                   </motion.div>
                 </div>
               ))}
+
             </div>
           </div>
         </div>
@@ -127,7 +159,7 @@ export default function TestimonialsSection({ className }: { className?: string 
   )
 }
 
-/* ================= HEADING WITH ICON (TEXT REVEAL) ================= */
+/* ================= HEADING WITH ICON ================= */
 
 function HeadingWithIcon({ children }: { children: string }) {
   const letters = children.split('')
