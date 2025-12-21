@@ -1,6 +1,6 @@
 'use client'
 import Lottie from "lottie-react"
-import RocketAnimation from "../../public/RockerAnimation.json"
+import RocketAnimation1 from "../../public/RocketAnimation1.json"
 import { BorderBeam } from "../../components/ui/border-beam"
 import { RippleButton } from "@/components/ui/ripple-button"
 
@@ -13,7 +13,7 @@ export default function ContactUs() {
           Contact us
           <span className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]">
             <Lottie
-              animationData={RocketAnimation}
+              animationData={RocketAnimation1}
               loop
               autoplay
               className="w-full h-full scale-[1.7] origin-center"

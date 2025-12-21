@@ -5,7 +5,6 @@ import Jaskaran from "../../public/Jaskaran.png";
 import HeroSectionBackground from "../../public/HeroSectionBackground.png";
 import { Highlighter } from "@/components/ui/highlighter";
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
 
 function QuoteIcon({
   className = "",
@@ -144,16 +143,16 @@ export default function HeroSection() {
               ">
 
                 {/* Opening Quote (Lucide) */}
-<QuoteIcon
-  className="
-    absolute
-    -top-4 -left-4
-    w-6 h-6
-    text-[#00A3FF]
-    bg-[#EAF7FF]
-    backdrop-blur-md
-  "
-/>
+                <QuoteIcon
+                  className="
+                    absolute
+                    -top-4 -left-4
+                    w-6 h-6
+                    text-[#00A3FF]
+                    bg-[#EAF7FF]
+                    backdrop-blur-md
+                  "
+                />
 
 
                 <p className="leading-relaxed text-black/90">
@@ -163,16 +162,16 @@ export default function HeroSection() {
                 </p>
 
                 {/* Closing Quote (Lucide rotated) */}
-<QuoteIcon
-  className="
-    absolute
-    -bottom-4 -right-4
-    w-6 h-6
-    rotate-180
-    text-[#00A3FF]
-    bg-white
-  "
-/>
+                <QuoteIcon
+                  className="
+                    absolute
+                    -bottom-4 -right-4
+                    w-6 h-6
+                    rotate-180
+                    text-[#00A3FF]
+                    bg-white
+                  "
+                />
 
 
               </div>

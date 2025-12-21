@@ -9,6 +9,8 @@ import {
 } from "lucide-react";
 import { FaDiscord } from "react-icons/fa";
 import { Link2 } from "lucide-react";
+import { ArrowUp } from "lucide-react";
+
 
 export default function Footer() {
   return (
@@ -29,17 +31,32 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="flex items-center gap-8">
-            <FooterItem icon={<Mail className="text-red-500" />} label="EMAIL" />
-            <FooterItem icon={<Linkedin className="text-[#0A66C2]" />} label="LINKDIN" />
-            <FooterItem icon={<FaDiscord className="text-[#5865F2]" size={20} />} label="DISCORD" />
-            <FooterItem
-              icon={<Instagram />}
-              label="INSTAGRAM"
-              gradient
-            />
-            <FooterItem icon={<Youtube className="text-red-600" />} label="YOUTUBE" />
-          </div>
+<div className="flex items-center gap-8">
+  <FooterItem icon={<Mail className="text-red-500" />} label="EMAIL" />
+  <FooterItem icon={<Linkedin className="text-[#0A66C2]" />} label="LINKDIN" />
+  <FooterItem icon={<FaDiscord className="text-[#5865F2]" size={20} />} label="DISCORD" />
+  <FooterItem icon={<Instagram />} label="INSTAGRAM" gradient />
+  <FooterItem icon={<Youtube className="text-red-600" />} label="YOUTUBE" />
+
+  {/* Arrow Button (Desktop only) */}
+  <button
+    className="
+      ml-2
+      w-[30px] h-[30px]
+      flex items-center justify-center
+      rounded
+      border border-[#00A3FF]
+      text-[#00A3FF]
+      hover:bg-[#00A3FF]
+      hover:text-white
+      transition-all duration-200
+    "
+    aria-label="Go"
+  >
+    <ArrowUp size={16} />
+  </button>
+</div>
+
         </div>
 
         {/* ================= MOBILE (FIXED) ================= */}
@@ -62,7 +79,7 @@ export default function Footer() {
           </div>
 
           {/* Right Column */}
-<div className="flex flex-col gap-6 mt-[101px]">
+        <div className="flex flex-col gap-6 mt-[101px]">
             <MobileItem
               icon={<Instagram />}
               label="INSTAGRAM"
