@@ -18,7 +18,7 @@ export default function AskSenior() {
       />
 
       {/* Tabs */}
-      <div className="flex flex-wrap justify-center gap-2 bg-[#E6F6FF] rounded-sm p-1.5 mb-12 shadow-sm">
+      <div className="flex flex-wrap justify-center gap-2 bg-[#E6F6FF] rounded-sm p-1.5 mb-10 shadow-sm">
         {askASeniorData.map((tab) => {
           const isActive = tab.id === activeTab.id;
           return (
