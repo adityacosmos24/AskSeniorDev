@@ -7,6 +7,24 @@ import { Highlighter } from "@/components/ui/highlighter";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
+function QuoteIcon({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      fill="currentColor"
+      className={className}
+    >
+      <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z" />
+    </svg>
+  );
+}
+
+
 export default function HeroSection() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-white">
@@ -126,17 +144,17 @@ export default function HeroSection() {
               ">
 
                 {/* Opening Quote (Lucide) */}
-                <Quote
-                  className="
-                    absolute
-                    -top-4 -left-4
-                    w-6 h-6
-                    rotate-180
-                    text-[#00A3FF]
-                    bg-[#EAF7FF]
-                    backdrop-blur-md
-                  "
-                />
+<QuoteIcon
+  className="
+    absolute
+    -top-4 -left-4
+    w-6 h-6
+    text-[#00A3FF]
+    bg-[#EAF7FF]
+    backdrop-blur-md
+  "
+/>
+
 
                 <p className="leading-relaxed text-black/90">
                   Drawing on my Google experience, I’m building AskSenior for freshers to ask
@@ -145,15 +163,17 @@ export default function HeroSection() {
                 </p>
 
                 {/* Closing Quote (Lucide rotated) */}
-                <Quote
-                  className="
-                    absolute
-                    -bottom-4 -right-4
-                    w-6 h-6
-                    text-[#00A3FF]
-                    bg-white
-                  "
-                />
+<QuoteIcon
+  className="
+    absolute
+    -bottom-4 -right-4
+    w-6 h-6
+    rotate-180
+    text-[#00A3FF]
+    bg-white
+  "
+/>
+
 
               </div>
             </div>
