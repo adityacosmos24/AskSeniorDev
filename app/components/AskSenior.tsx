@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { askASeniorData } from "@/components/Askaseniordata";
-import DfsBfsVisualizer from "../components/dsa/DfsBfsVisualizer"
+import DfsBfsVisualizer from "./DfsBfsVisualizer"
 import TextType from "@/components/TextType";
 
 export default function AskSenior() {

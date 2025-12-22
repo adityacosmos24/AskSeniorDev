@@ -147,10 +147,7 @@ export default function ContactUs() {
               p-4
               flex flex-col gap-4
               shadow-lg
-
-              lg:w-[700px]
-              lg:h-[497px]
-              lg:p-[34px]
+              flex lg:w-[700px] lg:h-[497px] lg:p-[34px]
               lg:gap-0
             "
           >
