@@ -675,7 +675,7 @@ export default function ProblemWorkspace({
                 <div>
                     <h3 className="font-medium text-base mb-2 text-[#181A1C]">Constraints</h3>
                     <div className="bg-slate-50 border border-slate-100 rounded-md p-3">
-                        <MarkdownContent className="text-[#373737]" content={currentVariation?.constraints} className="font-mono text-xs" />
+                        <MarkdownContent className="text-[#373737] font-mono text-xs" content={currentVariation?.constraints}/>
                     </div>
                 </div>
 

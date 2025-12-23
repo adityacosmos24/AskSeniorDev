@@ -6,7 +6,9 @@ import { getUserSubmissions } from "../../../lib/getUserSubmissions";
 
 export default function SubmissionPage() {
   const [openId, setOpenId] = useState<string | null>(null);
-  const [submissions, setSubmissions] = useState([]);
+  const [submissions, setSubmissions] = useState<
+    { _id: string; problemSlug: string; language: string; status: string; runtime: string; memory: string; time: string; code: string; }[]
+  >([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

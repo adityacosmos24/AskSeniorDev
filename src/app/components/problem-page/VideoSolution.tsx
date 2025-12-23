@@ -47,7 +47,7 @@ const VideoSolutionComponent: React.FC<VideoSolutionProps> = ({ videoUrl }) => {
       {/* Player Container */}
       <div className="w-full bg-black rounded-xl overflow-hidden shadow-sm border border-slate-200 relative group aspect-video shrink-0">
         <iframe 
-          src={embedUrl} 
+          src={embedUrl || ""} 
           title="Video Solution"
           className="absolute inset-0 w-full h-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
