@@ -1,6 +1,7 @@
 import CourseDetailsHero from "../../CourseDetailsHero";
 import Navbar from "../../Navbar";
 import CourseDetailsWhatYouWillLearn from "../../CourseDetailsWhatYouWillLearn";
+import CourseDetailsCourseContent from "../../CourseDetailsCourseContent";
 
 export default function Page(){
     return (
@@ -8,6 +9,7 @@ export default function Page(){
         <Navbar/>
             <CourseDetailsHero/>
             <CourseDetailsWhatYouWillLearn/>
+            <CourseDetailsCourseContent/>
         </>
     )
 }

@@ -17,7 +17,7 @@ export default function CourseDetailsWhatYouWillLearn() {
             <div className="bg-white rounded-md px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
                 {/* LEFT COLUMN */}
-                <ul className="space-y-3 text-sm sm:text-[15px] text-gray-700">
+                    <ul className="space-y-6 text-sm sm:text-[16px] text-[#373737]">
                 <li className="flex gap-2">
                     <span className="text-[#00A3FF]">•</span>
                     Generative AI: Create content, synthesize information, and learn
@@ -37,7 +37,7 @@ export default function CourseDetailsWhatYouWillLearn() {
                 </ul>
 
                 {/* RIGHT COLUMN */}
-                <ul className="space-y-3 text-sm sm:text-[15px] text-gray-700">
+                <ul className="space-y-6 text-sm sm:text-[16px] text-[#373737]">
                 <li className="flex gap-2">
                     <span className="text-[#00A3FF]">•</span>
                     ChatGPT: Turn creativity into paid work, generate fresh ideas,
@@ -48,7 +48,7 @@ export default function CourseDetailsWhatYouWillLearn() {
                     Marketing: Generate targeted content, capitalize on trends, and
                     create ads, newsletters, and campaigns
                 </li>
-                <li className="flex gap-2">
+                <li className="flex gap-2 ">
                     <span className="text-[#00A3FF]">•</span>
                     AI Voice Tools: Create AI-generated speech and even clone your
                     own voice
@@ -64,8 +64,8 @@ export default function CourseDetailsWhatYouWillLearn() {
         </div>
 
         {/* ================= COURSE INCLUDES ================= */}
-        <div className="mt-8">
-          <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">
+        <div className="mt-10 sm:mt-12 lg:mt-14">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4">
             This course includes:
           </h3>
 
@@ -84,7 +84,7 @@ export default function CourseDetailsWhatYouWillLearn() {
             <Pill icon={<Download size={14} />} text="141 Downloadable Resources" />
             <Pill icon={<Captions size={14} />} text="Closed Captions" />
             <Pill icon={<Smartphone size={14} />} text="Access on mobile & TV" />
-            <Pill icon={<Volume2 size={14} />} text="Audio Description" />
+            <Pill icon={<Volume2 size={14} />} text="Audio Description in existing audio" />
             <Pill icon={<Award size={14} />} text="Certificate of completion" />
           </div>
         </div>
@@ -103,7 +103,7 @@ function Pill({
 }) {
   return (
     <div
-      className="inline-flex items-center gap-2 rounded border border-gray-200 px-3 py-1.5 text-gray-700 bg-white">
+      className="inline-flex items-center gap-2 rounded-[3px] border border-[#E6F6FF] px-3 py-1.5 text-[#373737] bg-white shadow-[0_1px_2px_rgba(0,0,0,0.04)] font-semibold">
       {icon}
       <span>{text}</span>
     </div>

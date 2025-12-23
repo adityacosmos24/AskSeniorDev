@@ -174,7 +174,7 @@ const CourseDetailsHero = () => {
             </h1>
 
             {/* Description */}
-            <p className="text-sm sm:text-base text-gray-700 max-w-2xl">
+            <p className="text-sm sm:text-base text-gray-700 max-w-xl">
               50+ Generative AI Tools to 10x Business, Productivity, Creativity |
               ChatGPT, Artificial Intelligence, Prompt Engineering
             </p>
