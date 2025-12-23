@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import { motion } from 'framer-motion'
 import { Quote, MessageCircle } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { cn } from '@/lib/utils'
+import { Avatar, AvatarFallback, AvatarImage } from '../../components/ui/avatar'
+import { cn } from '../../lib/utils'
 
 const testimonials = [
   {

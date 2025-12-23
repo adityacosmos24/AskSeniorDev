@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Jaskaran from "../../public/Jaskaran.png";
-import HeroSectionBackground from "../../public/HeroSectionBackground.png";
-import { Highlighter } from "@/components/ui/highlighter";
+import Jaskaran from "../../../public/Jaskaran.png";
+import HeroSectionBackground from "../../../public/HeroSectionBackground.png";
+import { Highlighter } from "../../components/ui/highlighter";
 import { motion } from "framer-motion";
 
 function QuoteIcon({ className = "" }: { className?: string }) {

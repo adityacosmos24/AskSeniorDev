@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import avatar1 from '../../public/avatar-1.png';
-import avatar2 from '../../public/avatar-2.png';
-import avatar3 from '../../public/avatar-3.png';
+import avatar1 from '../../../public/avatar-1.png';
+import avatar2 from '../../../public/avatar-2.png';
+import avatar3 from '../../../public/avatar-3.png';
 import { motion } from 'framer-motion';
 
 const testimonials = [

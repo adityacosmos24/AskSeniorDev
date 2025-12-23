@@ -1,9 +1,9 @@
 'use client'
 
 import Lottie from "lottie-react"
-import RocketAnimation1 from "../../public/RocketAnimation1.json"
+import RocketAnimation1 from "../../../public/RocketAnimation1.json"
 import { BorderBeam } from "../../components/ui/border-beam"
-import { RippleButton } from "@/components/ui/ripple-button"
+import { RippleButton } from "../../components/ui/ripple-button"
 
 export default function ContactUs() {
   return (

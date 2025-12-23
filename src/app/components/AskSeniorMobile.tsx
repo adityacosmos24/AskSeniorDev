@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { askASeniorData } from "@/components/Askaseniordata";
+import { askASeniorData } from "../../components/Askaseniordata";
 import DfsBfsVisualizer from "./DfsBfsVisualizer";
 
 export default function AskSeniorMobile() {
