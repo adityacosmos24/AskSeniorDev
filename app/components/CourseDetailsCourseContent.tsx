@@ -1,11 +1,14 @@
 'use client';
 
-import { ChevronDown, FileText, PlayCircle } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronDown, PlayCircle } from 'lucide-react';
 
 export default function CourseDetailsCourseContent() {
+  const [openSection, setOpenSection] = useState<number | null>(1);
+
   return (
     <section className="w-full bg-white">
-      <div className="mx-auto w-[95%] max-w-[1200px] px-4 sm:px-6 lg:px-0 mt-6 sm:mt-8 lg:mt-10">
+      <div className="mx-auto w-[95%] max-w-[1200px] px-4 sm:px-6 lg:px-0 mt-4 sm:mt-6 lg:mt-8">
 
         {/* ================= HEADER ================= */}
         <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1">
@@ -13,22 +16,27 @@ export default function CourseDetailsCourseContent() {
         </h2>
 
         <p className="text-xs sm:text-sm text-gray-500 mb-2">
-          54 Sections • 519 Lectures • 39h 22m total length
+          54 Sections <span className="text-[#00A3FF]">•</span> 519 Lectures{' '}
+          <span className="text-[#00A3FF]">•</span> 39h 22m total length
         </p>
 
         {/* ================= CONTENT LIST ================= */}
         <div className="border border-gray-200 rounded-md overflow-hidden">
 
-          {/* SECTION ITEM */}
           <SectionHeader
+            index={0}
             title="The Complete AI Guide Introduction"
             meta="2 lectures • 10 min"
+            openSection={openSection}
+            setOpenSection={setOpenSection}
           />
 
           <SectionHeader
+            index={1}
             title="Getting Started with ChatGPT, Prompting, and how LLM’s Work"
             meta="9 lectures • 1 hour 10 min"
-            expanded
+            openSection={openSection}
+            setOpenSection={setOpenSection}
           >
             <LectureItem title="ChatGPT Interface Walkthrough: Buttons, Features, and Functionalities" time="09:20" />
             <LectureItem title="Personalize ChatGPT with Settings, Memory, and Custom Instructions" time="14:28" />
@@ -39,13 +47,19 @@ export default function CourseDetailsCourseContent() {
           </SectionHeader>
 
           <SectionHeader
+            index={2}
             title="ChatGPT in Action: Features, Use Cases, and Tools"
             meta="2 lectures • 10 min"
+            openSection={openSection}
+            setOpenSection={setOpenSection}
           />
 
           <SectionHeader
+            index={3}
             title="ChatGPT: Prompt Engineering and Custom 17 page Prompting Guide PDF"
             meta="2 lectures • 10 min"
+            openSection={openSection}
+            setOpenSection={setOpenSection}
           />
         </div>
 
@@ -79,24 +93,33 @@ export default function CourseDetailsCourseContent() {
 /* ================= SUB COMPONENTS ================= */
 
 function SectionHeader({
+  index,
   title,
   meta,
-  expanded = false,
+  openSection,
+  setOpenSection,
   children,
 }: {
+  index: number;
   title: string;
   meta: string;
-  expanded?: boolean;
+  openSection: number | null;
+  setOpenSection: (val: number | null) => void;
   children?: React.ReactNode;
 }) {
+  const isOpen = openSection === index;
+
   return (
     <div className="border-t border-gray-200">
-      <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-gray-50">
+      <button
+        onClick={() => setOpenSection(isOpen ? null : index)}
+        className="w-full flex items-center justify-between px-4 sm:px-6 py-3 bg-gray-50"
+      >
         <div className="flex items-center gap-2">
           <ChevronDown
             size={16}
-            className={`text-gray-500 transition ${
-              expanded ? 'rotate-180' : ''
+            className={`text-gray-500 transition-transform duration-300 ${
+              isOpen ? 'rotate-180' : ''
             }`}
           />
           <span className="text-sm sm:text-[15px] font-medium text-gray-800">
@@ -104,13 +127,18 @@ function SectionHeader({
           </span>
         </div>
         <span className="text-xs sm:text-sm text-gray-500">{meta}</span>
-      </div>
+      </button>
 
-      {expanded && (
-        <div className="bg-white">
-          {children}
-        </div>
-      )}
+      {/* SMOOTH CONTENT */}
+      <div
+        className="overflow-hidden transition-all duration-300 ease-in-out"
+        style={{
+          maxHeight: isOpen ? '500px' : '0px',
+          opacity: isOpen ? 1 : 0,
+        }}
+      >
+        <div className="bg-white">{children}</div>
+      </div>
     </div>
   );
 }
