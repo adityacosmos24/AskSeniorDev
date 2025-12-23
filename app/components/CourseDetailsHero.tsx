@@ -138,11 +138,11 @@ import peopleImg from "../../public/peopleImg.png";
 
 const CourseDetailsHero = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-blue-50 to-white flex justify-center">
-      <div className="flex align-middle justify-center mx-auto w-full max-w-[1800px] px-4 sm:px-6 lg:px-16 py-10">
+    <div className="w-[95%] bg-gradient-to-r from-blue-50 to-white flex justify-center">
+      <div className="flex align-middle justify-center mx-auto w-full max-w-[1920px] px-4 sm:px-6 lg:px-16 py-10">
 
         {/* Main Layout */}
-        <div className="flex flex-col lg:flex-row items-center gap-10">
+        <div className="flex flex-col lg:flex-row items-center gap-6 sm:gap-8 md:gap-12 lg:gap-20 2xl:gap-30">
 
           {/* Image */}
           <div className="flex-shrink-0">
@@ -212,12 +212,33 @@ const CourseDetailsHero = () => {
 
                   {/* Text + Button */}
                   <div className="max-w-xs">
-                    <p className="text-[10px] sm:text-[11px] md:text-sm leading-tight text-gray-900">
+                    <p className="text-[7px] sm:text-[11px] md:text-sm leading-tight text-gray-900">
                       Access this top-rated course, plus 26,000+ <br /> more top-rated courses,
                       with a Udemy plan.
                     </p>
 
-                    <button className="mt-2 rounded-sm bg-[#00A3FF] px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm text-white">
+                    <button className="mt-2
+    inline-flex
+    items-center
+    justify-center
+
+    rounded-sm
+    bg-[#00A3FF]
+
+    px-4
+    py-2
+    sm:px-4 sm:py-2
+    md:px-5 md:py-2
+
+    text-[7px]
+    sm:text-xs
+    md:text-sm
+
+    font-medium
+    text-white
+
+    hover:bg-[#0095e6]
+    transition">
                       Enroll Now
                     </button>
                   </div>
