@@ -63,23 +63,23 @@ export default function AskSenior() {
       "
           >
             {/* Left Section */}
-<div className="flex-1 flex flex-col justify-center">
-  <div className="relative w-full h-[240px] md:h-[380px]">
-    {activeTab.leftContent.type === "visualizer" ? (
-      <div className="w-full h-full flex items-center justify-center">
-        <DfsBfsVisualizer />
-      </div>
-    ) : (
-      <Image
-        src={activeTab.leftContent.image!}
-        alt=""
-        fill
-        className="object-contain"
-        priority
-      />
-    )}
-  </div>
-</div>
+            <div className="flex-1 flex flex-col justify-center">
+              <div className="relative w-full h-[240px] md:h-[380px]">
+                {activeTab.leftContent.type === "visualizer" ? (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <DfsBfsVisualizer />
+                  </div>
+                ) : (
+                  <Image
+                    src={activeTab.leftContent.image!}
+                    alt=""
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                )}
+              </div>
+            </div>
 
           </div>
 
@@ -94,10 +94,7 @@ export default function AskSenior() {
         lg:right-0
         lg:-translate-y-1/2
         max-w-md
-        z-20
-        mx-auto
-      "
-          >
+        z-20 mx-auto">
             <div className="bg-white rounded-lg p-4 shadow-2xl border border-blue-300">
               <div className="space-y-4">
                 {activeTab.rightContent.items.map((item, index) => (
@@ -150,29 +147,8 @@ export default function AskSenior() {
               <input
                 type="email"
                 placeholder="Write Email Address"
-                className="
-    w-full
-    max-w-2xl
-    px-6
-    py-4
-    rounded-sm
-    bg-white
-    text-gray-900
-
-    border
-    border-white/40
-
-    placeholder:text-[#00A3FF]
-    placeholder:font-medium
-
-    outline-none
-    focus:border-white/70
-    focus:ring-2
-    focus:ring-blue-400
-  "
+                className="w-full max-w-2xl px-6 py-4 rounded-sm bg-white text-gray-900 border border-white/40 placeholder:text-[#00A3FF] placeholder:font-medium outline-none focus:border-white/70 focus:ring-2 focus:ring-blue-400"
               />
-
-
               {/* Button */}
               <button className="mt-3 px-10 py-3 bg-[#00A3FF] text-white rounded-sm font-medium hover:bg-blue-700 transition">
                 Submit
