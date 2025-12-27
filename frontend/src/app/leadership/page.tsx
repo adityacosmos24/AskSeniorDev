@@ -5,6 +5,8 @@ import Tabs, { TabConfig } from "./LeadershipTabs";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LeaderboardSection from "./LeaderboardSection";
+import CertificateSection from './CertificateSection';
+
 
 const TABS: TabConfig[] = [
   { id: "tab1", title: "Course" },
@@ -36,11 +38,13 @@ export default function Page() {
             )}
 
             
-            {activeTab === "tab3" && null}
+            {activeTab === "tab3" && (
+              <div className="mt-12 mb-24 pt-8 flex justify-center">
+                <CertificateSection />
+              </div>
+            )}
         </div>
       </main>
-
-      <Footer />
     </>
   );
 }
