@@ -10,21 +10,21 @@ export default function ContactUs() {
     <section className="w-full flex flex-col items-center pt-4 sm:pt-6">
       {/* ================= HEADER ================= */}
       <div className="w-full flex flex-col items-center mb-10 px-4">
-        <h2 className="text-[32px] sm:text-[36px] lg:text-[40px] font-semibold flex items-center gap-3">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold flex items-center gap-3">
           Contact us
           <span className="w-[42px] h-[42px] sm:w-[48px] sm:h-[48px]">
             <Lottie
               animationData={RocketAnimation1}
               loop
               autoplay
-              className="w-full h-full scale-[1.7] origin-center"
+              className="w-full h-full scale-[2] origin-center"
             />
           </span>
         </h2>
       </div>
 
       {/* ================= FLUID WRAPPER (NEW) ================= */}
-      <div className="w-full px-4 sm:px-6 lg:px-12 2xl:px-24">
+      <div className="w-[95%] px-4 sm:px-6 lg:px-12 2xl:px-24">
         {/* ================= WIDTH-CONSTRAINED CONTAINER ================= */}
         <div
           className="

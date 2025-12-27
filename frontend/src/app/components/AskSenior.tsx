@@ -10,11 +10,11 @@ export default function AskSenior() {
   const [activeTab, setActiveTab] = useState(askASeniorData[0]);
 
   return (
-    <section className="hidden md:flex w-full flex-col items-center py-16 md:py-24 bg-white">
+    <section className="hidden md:flex w-full flex-col items-center py-10 md:py-12 bg-white">
       {/* Title */}
       <TextType 
         text="Why Ask Senior?" 
-        className="text-3xl md:text-4xl font-semibold text-center mb-12 md:mb-16" 
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12" 
       />
 
       {/* Tabs */}

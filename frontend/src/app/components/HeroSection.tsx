@@ -48,7 +48,7 @@ export default function HeroSection() {
           "
         >
           {/* ---------- HEADING ---------- */}
-          <h1 className="text-4xl md:text-5xl font-semibold text-[#181A1C] text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-[#181A1C] text-center">
             Your{" "}
             <Highlighter action="highlight" color="#ADE2FF">
               10× growth
@@ -56,7 +56,7 @@ export default function HeroSection() {
             starts here
           </h1>
 
-          <p className="mt-4 text-[#4F4F4F] text-center max-w-xl">
+          <p className="mt-4 text-[#4F4F4F] font-semibold text-center max-w-xl">
             AI guidance, expert mentors, faster outcomes.
             <br />
             Ask a better question
