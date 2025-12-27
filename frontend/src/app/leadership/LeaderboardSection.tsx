@@ -1,32 +1,26 @@
 'use client';
 
 import LeaderboardPodium from './LeaderboardPodium';
-import LeaderboardCard from './LeaderboardCard';
-import { leaderboardCards } from './leaderboardCards';
+import LeaderboardTable from './LeaderboardTable';
 
 export default function LeaderboardSection() {
   return (
     <section className="w-full flex flex-col items-center">
-      {/* PODIUM (UNCHANGED) */}
+      {/* PODIUM */}
       <LeaderboardPodium />
 
-      {/* CARDS */}
+      {/* TABLE */}
       <div
         className="
           mt-10
           w-full
           max-w-[1400px]
           px-4
-          grid
-          grid-cols-1
-          sm:grid-cols-2
-          lg:grid-cols-3
-          gap-6
+          flex
+          justify-center
         "
       >
-        {leaderboardCards.map((card) => (
-          <LeaderboardCard key={card.id} data={card} />
-        ))}
+        <LeaderboardTable />
       </div>
     </section>
   );
