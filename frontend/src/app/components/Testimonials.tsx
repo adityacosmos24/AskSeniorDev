@@ -136,8 +136,7 @@ function HeadingWithIcon({ children }: { children: string }) {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.6 }}
-      className="flex items-center text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900"
-    >
+      className="flex flex-wrap items-start text-3xl sm:flex-nowrap sm:items-center sm:text-4xl md:text-5xl font-bold text-gray-900">
       {letters.map((char, i) => (
         <motion.span
           key={i}
