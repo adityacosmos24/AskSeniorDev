@@ -87,7 +87,7 @@ export default function Navbar({ onMenuClick }: NavbarProps) {
         </button>
 
         {/* Logo */}
-        <div className="text-xl font-semibold text-sky-600 mr-4 md:mr-8">
+        <div className="text-xl font-semibold text-[#00A3FF] mr-4 md:mr-8">
           Senior
         </div>
 
